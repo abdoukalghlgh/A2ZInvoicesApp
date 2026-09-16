@@ -1,0 +1,40 @@
+name: nour_invoicing
+description: "تطبيق تحرير الفواتير - النور (Android)"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  path_provider: ^2.1.3
+  pdf: ^3.11.1
+  printing: ^5.13.1
+  share_plus: ^10.1.4
+  cross_file: ^0.3.4+2
+  intl: ^0.19.0
+  uuid: ^4.4.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # مهم جدًا لجودة ملف PDF: النصوص العربية داخل واجهة التطبيق تظهر تلقائيًا
+  # بشكل صحيح (أندرويد يوفّر خط عربي احتياطي)، لكن مكتبة توليد PDF تحتاج
+  # ملف خط عربي حقيقي مضمّن داخل التطبيق. نزّل خط "Noto Naskh Arabic" من
+  # Google Fonts وضع ملفين بهذين الاسمين بالضبط داخل assets/fonts/:
+  #   NotoNaskhArabic-Regular.ttf
+  #   NotoNaskhArabic-Bold.ttf
+  # راجع README.md لرابط التحميل. المجلد معلن هنا حتى تُضمَّن الملفات
+  # تلقائيًا بمجرد إضافتها، بدون الحاجة لتعديل هذا الملف مرة أخرى.
+  assets:
+    - assets/fonts/
