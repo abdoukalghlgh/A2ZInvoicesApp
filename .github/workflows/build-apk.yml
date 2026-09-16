@@ -1,6 +1,5 @@
 
-name: Build A2ZInvoicesApp APK
-
+name: Build A2ZInvoicesApp APK 
 on:
   push:
     branches:
@@ -23,7 +22,7 @@ jobs:
           cache: true
 
       - name: Create Android platform
-        run: flutter create --platforms=android .
+        run: flutter create --platforms=android --project -name a2z_invoices_app .
 
       - name: Get dependencies
         run: flutter pub get
